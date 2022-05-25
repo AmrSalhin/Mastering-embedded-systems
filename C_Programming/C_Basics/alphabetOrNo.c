@@ -10,6 +10,7 @@ void main ()
 {char x;
 
 printf("Enter char : ");
+fflush(stdout);
 scanf("%c",&x);
 
 if(x>64&&x<91){

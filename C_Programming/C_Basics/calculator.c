@@ -10,8 +10,10 @@ void main ()
 {float x,z,result;
 char y;
 printf("Enter operator either + or - or * or / ");
+fflush(stdout);
 scanf("%c",&y);
-printf("Enter tow numbers : ");
+printf("Enter two numbers : ");
+fflush(stdout);
 scanf("%f %f",&x,&z);
 
 switch(y){

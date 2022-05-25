@@ -9,6 +9,7 @@
 void main ()
 {int x;
 printf("Enter number : ");
+fflush(stdout);
 scanf("%d",&x);
 int i,sum=0;
 for(i=0;i<x;i++){

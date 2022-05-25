@@ -10,6 +10,7 @@ void main ()
 {float x;
 
 printf("Enter number : ");
+fflush(stdout);
 scanf("%f",&x);
 if(x>0){
 	printf("%f is positive",x);

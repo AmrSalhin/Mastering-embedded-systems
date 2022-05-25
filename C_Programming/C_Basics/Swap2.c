@@ -10,10 +10,12 @@ void main ()
 {float x,y;
 
 printf("Enter number a : ");
+fflush(stdout);
 scanf("%f",&x);
 printf("Enter number b : ");
+fflush(stdout);
 scanf("%f",&y);
-/*Swaping Proccess*/
+/*Swapping Process*/
 x=x+y;
 y=x-y;
 x=x-y;

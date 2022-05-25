@@ -10,6 +10,7 @@ void main ()
 {char x;
 
 printf("Enter an char you want to check : ");
+fflush(stdout);
 scanf("%c",&x);
 if(x=='a'||x=='e'||x=='i'||x=='o'||x=='u'){
 	printf("%c is vowel",x);

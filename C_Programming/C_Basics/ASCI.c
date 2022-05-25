@@ -7,8 +7,10 @@
 #include <stdio.h>
 
 void main ()
-{char x;
+{
+	char x;
 	printf("Enter a char : ");
+	fflush(stdout);
 	scanf("%c",&x);
 	printf("ASCI value : %d",x);
 }

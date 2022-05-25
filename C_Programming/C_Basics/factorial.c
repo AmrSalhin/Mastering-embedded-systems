@@ -9,6 +9,7 @@
 void main ()
 {int x;
 printf("Enter number : ");
+fflush(stdout);
 scanf("%d",&x);
 int i,factorial=1;
 if(x>0){

@@ -10,8 +10,10 @@ void main ()
 {float x,y,z;
 
 printf("Enter number a : ");
+fflush(stdout);
 scanf("%f",&x);
 printf("Enter number b : ");
+fflush(stdout);
 scanf("%f",&y);
 z=x;
 x=y;
