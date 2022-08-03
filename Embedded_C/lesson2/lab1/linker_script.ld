@@ -2,7 +2,7 @@ ENTRY(reset)
 
 MEMORY
 {
-	Mem (rwx) : ORIGIN =0X00000000, LENGTH =64M
+	Mem (rwx) : o = 0X00000000, l =64M
 }
 
 SECTIONS
