@@ -10,10 +10,13 @@
 #include "fifo.h"
 
 void add_student_file(FIFO_BUF_t* student){
-
+	char fileName[50];
+	//MAKE USER ENTER THE FILE NAME
+	Dprintf("\nEnter Name of File to read it ");
+	gets(fileName);
 	//Pointer to file
 	FILE *Pfile=NULL;
-	Pfile=fopen("studentData.txt", "r");
+	Pfile=fopen(fileName, "r");
 	//check if the file exist
 	if(Pfile==NULL){
 		Dprintf("\n=======File dosn't EXIST==========");
@@ -42,7 +45,7 @@ void add_student_file(FIFO_BUF_t* student){
 		if((FIFO_enqueue(student,newStudent) == FIFO_NO_ERROR))
 		{
 
-			Dprintf("\nroll num %d added successfully",newStudent.roll);
+			Dprintf("\nRoll Number %d added successfully",newStudent.roll);
 		}
 		else
 		{
@@ -59,30 +62,30 @@ void add_student_manually(FIFO_BUF_t* student){
 	int num =newStudent.roll;
 	student_info temp;
 	if(search_for_roll(student, temp, num)==roll_num_exist){
-		Dprintf("\n roll number %d is Repeated Roll Number",newStudent.roll);
+		Dprintf("\n Roll number %d is Repeated Roll Number",newStudent.roll);
 		return;
 	}
-	Dprintf("Enter Student First Name: \n");
+	Dprintf("\nEnter Student First Name: ");
 	scanf("%s",&newStudent.fname);
-	Dprintf("Enter Student Last Name: \n");
+	Dprintf("\nEnter Student Last Name: ");
 	scanf("%s",&newStudent.lname);
 
-	Dprintf("Enter Student GPA: \n");
+	Dprintf("\nEnter Student GPA: ");
 	scanf("%f",&newStudent.GPA);
 
 	for(int i =0 ; i < 5 ;i++)
 	{
-		Dprintf("Enter Student course number %d ID \n",i+1);
+		Dprintf("\nEnter Student course number %d ID ",i+1);
 		scanf( "%d",& newStudent.cid[i]);
 
 	}
 	if((FIFO_enqueue(student,newStudent) == FIFO_NO_ERROR))
 	{
-		Dprintf("Student: %d added successfully \n" , newStudent.roll);
+		Dprintf("\nStudent: %d added successfully " , newStudent.roll);
 	}
 	else
 	{
-		Dprintf("Student: %d Failed to be added  \n" , newStudent.roll);
+		Dprintf("\nStudent: %d Failed to be added  " , newStudent.roll);
 	}
 }
 void find_roll(FIFO_BUF_t * student){
@@ -220,17 +223,20 @@ void update_student(FIFO_BUF_t * student){
 			Dprintf("\nEnter the new first name ");
 			gets(tempText);
 			strcpy(newS->fname,tempText);
+			Dprintf("\n=======Updated successfully=========");
 			break;
 		case 2:
 			Dprintf("\nEnter the new last name ");
 			gets(tempText);
 			strcpy(newS->lname,tempText);
+			Dprintf("\n=======Updated successfully=========");
 			break;
 		case 3:
 			Dprintf("\nEnter the new roll number ");
 			scanf("%d",&tempNum);
 			if(search_for_roll(student, test, tempNum)==roll_num_dosenot_exist){
 				newS->roll=tempNum;
+				Dprintf("\n=======Updated successfully=========");
 			}else{
 				Dprintf("\nRoll number already taken");
 			}
@@ -239,6 +245,7 @@ void update_student(FIFO_BUF_t * student){
 			Dprintf("\nEnter the new GPA ");
 			scanf("%f",&ftemp);
 			newS->GPA=ftemp;
+			Dprintf("\n=======Updated successfully=========");
 			break;
 		case 5:
 			for(int i=0;i<5;i++){
@@ -246,6 +253,7 @@ void update_student(FIFO_BUF_t * student){
 				scanf("%d",&newS->cid[i]);
 
 			}
+			Dprintf("\n=======Updated successfully=========");
 			break;
 		default:
 			Dprintf("\n invalid option");
